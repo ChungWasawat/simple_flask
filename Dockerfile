@@ -1,6 +1,6 @@
 FROM python:3.9.7-slim
 
-
+RUN pip install -U pip
 
 COPY requirements.txt /tmp/requirements.txt
 
