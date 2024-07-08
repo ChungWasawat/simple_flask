@@ -1,8 +1,10 @@
 FROM python:3.9.7-slim
 
+USER dev1
+
 COPY requirements.txt /tmp/requirements.txt
 
-RUN pip install --no-cache-dir --user -r /tmp/requirements.txt
+RUN pip install --user -r /tmp/requirements.txt
 
 WORKDIR /app
 
