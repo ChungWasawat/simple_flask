@@ -1,15 +1,7 @@
 from flask import Flask, request, jsonify
+import functions
 
 
-def hello_world():
-    return "Hello World"
-
-def plus_number(x,y):
-    return x+y
-
-def find_total_json(req):
-    #dict = {"id":"string", "name": "string", "price": int, "quantity": int  }
-    return { 'total_price': req["price"] * req["quantity"] }
 
 
 app = Flask('simple_web')
@@ -18,7 +10,7 @@ app = Flask('simple_web')
 def predict_endpoint():
     data = request.get_json()
 
-    result =  find_total_json(data)
+    result =  functions.find_total_json(data)
 
     return jsonify(result)
 
