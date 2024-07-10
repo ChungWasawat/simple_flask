@@ -7,9 +7,9 @@ def hello_world():
 def plus_number(x,y):
     return x+y
 
-def convert_value_json(req):
+def find_total_json(req):
     #dict = {"id":"string", "name": "string", "price": int, "quantity": int  }
-    return req["price"] * req["quantity"]
+    return { 'total_price': req["price"] * req["quantity"] }
 
 
 app = Flask('simple_web')
@@ -18,9 +18,7 @@ app = Flask('simple_web')
 def predict_endpoint():
     data = request.get_json()
 
-    result = {
-        'total_price': convert_value_json(data)
-    }
+    result =  find_total_json(data)
 
     return jsonify(result)
 
