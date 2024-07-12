@@ -1,4 +1,4 @@
-import flask_app
+import functions
 
 def test_find_total():
     test_data = {
@@ -7,7 +7,7 @@ def test_find_total():
     "price": 30050, 
     "quantity": 4  }
 
-    actual_result = flask_app.find_total_json(test_data)
+    actual_result = functions.find_total_json(test_data)
     expected_result = {
         'total_price': 120200
     }
