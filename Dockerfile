@@ -8,7 +8,7 @@ RUN pip install -r /tmp/requirements.txt
 
 WORKDIR /app
 
-COPY [ "flask_app.py", "./" ]
+COPY [ "flask_app.py", "functions.py", "./" ]
 
 EXPOSE 9696
 
